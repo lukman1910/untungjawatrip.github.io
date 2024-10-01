@@ -1,0 +1,828 @@
+:root {
+  --primary: #8a633b;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: inherit;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  /* min-height: 5000px; */
+  /* min heigh untuk lembar sambungan kebawah web */
+}
+
+/* navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #996e42;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+.navbar .navbar-logo:hover {
+  color: #ffcc00; /* Ganti warna saat hover */
+  transform: scale(1.2); /* Perbesar tulisan saat hover */
+  cursor: pointer; /* Ubah kursor */
+}
+.navbar .navbar-logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.7s;
+}
+
+.navbar .navbar-logo span {
+  color: #ffcc00; /* Ganti warna saat hover */
+}
+
+.navbar .navbar-nav a {
+  color: white; /* Warna teks */
+  display: inline-block;
+  font-size: 1.2rem; /* Ukuran font */
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+/* navbar */
+#seafood-menu {
+  display: none;
+}
+.navbar .navbar-nav a:hover {
+  color: #ffcc00;
+  transform: scale(1.2);
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+  transition: 0.2s linear;
+}
+.navbar .navbar-extra a {
+  display: inline-block;
+  background: linear-gradient(45deg, #6299eb, #de5d83, #96b6db);
+  color: #fff;
+  padding: 0.5px 5px;
+  font-size: 8px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.navbar .navbar-extra a:hover {
+  color: #ffcc00;
+}
+
+/* Hero Section */
+/* hero image slide */
+.image-row {
+  height: auto;
+  width: 100%;
+  overflow: 100%; /* Sembunyikan gambar yang di luar batas */
+  position: relative;
+  margin-top: -100px;
+}
+.hero img:hover {
+  transform: scale(1.2) rotate(0deg); /* Gambar diperbesar dan sedikit berputar */
+}
+.image-slide:hover {
+  animation-play-state: paused; /* Hentikan animasi ketika di-hover */
+}
+.image-slide {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  animation: slideRight 14s linear infinite; /* Animasi berjalan ke kanan */
+}
+
+.image-slide img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%); /* Mulai dari luar layar sebelah kiri */
+  }
+  100% {
+    transform: translateX(1%); /* Bergerak ke arah kanan hingga keluar layar */
+  }
+}
+
+/* hero image slide end*/
+
+.hero {
+  min-height: 120vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/Pulau3.jpg");
+  background-repeat: no-repeat;
+  background-size: 1350px 750px;
+  background-position: center;
+}
+.hero::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+}
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+  margin-top: -2rem;
+}
+.hero .content h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+  margin-top: -2rem;
+}
+.hero .content h1 span {
+  color: var(--primary);
+}
+/* Efek animasi warna pada span */
+.color-changing {
+  animation: colorChange 3s infinite linear; /* Animasi terus menerus */
+}
+
+/* Definisi animasi */
+@keyframes colorChange {
+  0% {
+    color: red;
+  }
+  20% {
+    color: orange;
+  }
+  40% {
+    color: yellow;
+  }
+  60% {
+    color: green;
+  }
+  80% {
+    color: blue;
+  }
+  100% {
+    color: violet;
+  }
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 2;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+.second-paragraph {
+  font-family: sans-serif;
+  color: #fff;
+}
+
+/* Whatsapp Button Style */
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 50px;
+  display: inline-table;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.btn-whatsapp i {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1da851;
+
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px) scale(1.09);
+}
+
+/* Whatsapp Button Style End */
+
+/* Telegram Button Style */
+
+.btn-telegram {
+  background-color: #0088cc;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 50px;
+  display: inline-block;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+  margin-left: 4.5rem;
+}
+
+.btn-telegram i {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.btn-telegram:hover {
+  background-color: #007bb5;
+  color: #fff;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px) scale(1.09);
+}
+/* Telegram Button Style ENd */
+
+/* Facebook button */
+/* Facebook Messenger Button Style */
+.btn-facebook {
+  background-color: #1d58d6;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 50px;
+  display: inline-block;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+  margin-left: 9rem;
+}
+
+.btn-facebook i {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.btn-facebook:hover {
+  background-color: #0a49d1;
+  color: #fff;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px) scale(1.09);
+}
+
+/* Facebook button ENd */
+
+@media (max-width: 768px) {
+  .col-4 {
+    flex: 0 0 100%;
+  }
+}
+
+/* Styles for Tentang Kami Section */
+#tentang-kami {
+  padding: 70px;
+  background-color: #e0f7fa;
+  flex: 1 1 45%; /* Elemen akan menyesuaikan lebar */
+  margin: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gambar {
+  flex: 1;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.gambar img {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.teks {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.teks h2 {
+  font-size: 32px;
+  color: #00796b;
+  padding: 1rem;
+}
+
+.teks p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+.hover-color {
+  font-size: 36px;
+  transition: color 0.3s ease-in-out; /* Transisi halus saat hover */
+}
+
+/* Efek hover dengan banyak warna */
+.hover-color:hover {
+  animation: rainbow 1s infinite linear; /* Animasi saat di-hover */
+}
+@keyframes rainbow {
+  0% {
+    color: red;
+  }
+  15% {
+    color: orange;
+  }
+  30% {
+    color: yellow;
+  }
+  45% {
+    color: green;
+  }
+  60% {
+    color: blue;
+  }
+  75% {
+    color: indigo;
+  }
+  90% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
+}
+/* Gaya untuk container utama */
+.tentang-kami {
+  padding: 40px 20px;
+  background-color: hsl(0, 0%, 98%); /* Contoh latar belakang */
+}
+
+/* Gaya untuk layout di layar besar */
+
+.teks .warna-1 {
+  color: #0e0a09; /* Warna pertama */
+}
+.teks .warna-2 {
+  color: #1b046e; /* Warna pertama */
+}
+.teks .warna-3 {
+  color: #796d06; /* Warna pertama */
+}
+.teks .warna-4 {
+  color: #8a0657; /* Warna pertama */
+}
+
+/* Media Query untuk layar kecil (di bawah 768px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Ubah layout ke kolom */
+  }
+
+  .gambar {
+    width: 100%; /* Gambar menyesuaikan lebar container */
+    margin-bottom: 20px; /* Jarak bawah antara gambar dan teks */
+  }
+
+  .teks {
+    width: 100%;
+    text-align: center; /* Opsional: teks rata tengah */
+    font-size: 10px; /* Ukuran font sedikit lebih kecil di layar kecil */
+  }
+}
+/* tentang kami test END */
+
+/* Paket liburan */
+/* Section Paket Liburan */
+#paket-liburan {
+  padding: 50px;
+  text-align: center;
+  background-image: url("../img/Pulau1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#paket-liburan h2 {
+  border-radius: 50px;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #eee;
+  background: linear-gradient(45deg, #4f8be6, #e4698c, #4176af);
+}
+
+.paket-container {
+  display: flex;
+  contain: wrap;
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.paket-card {
+  background-color: rgba(255, 255, 255, 0.815);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: left;
+  width: 100%;
+}
+
+.paket-card h3 {
+  text-align: center;
+  border-radius: 20px;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #010101;
+  background: #9db6ec;
+}
+
+.paket-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #010101;
+}
+
+.order-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: #128c7e;
+}
+
+@keyframes backgroundChange {
+  0% {
+    background-color: #ff7e5f;
+  }
+  25% {
+    background-color: #4db832;
+  }
+  50% {
+    background-color: #6a82fb;
+  }
+  75% {
+    background-color: #fc5c7d;
+  }
+  100% {
+    background-color: #ff7e5f;
+  }
+}
+
+.animated-background {
+  color: white; /* Warna teks tetap */
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  animation: backgroundChange 5s infinite; /* Animasi background berjalan terus-menerus */
+  transition: background-color 1s ease;
+  font-size: 2rem;
+}
+
+/* Paket liburan End */
+/* Css Galery kami */
+#galeri {
+  padding: 40px;
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #f06595,
+    #845ef7,
+    #5c7cfa,
+    #339af0,
+    #22b8cf,
+    #20c997,
+    #51cf66
+  );
+}
+
+#galeri h3 {
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.galeri-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.galeri-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Css Galery kami ENd */
+
+/* About Section start */
+
+.menu,
+.contact {
+  padding: 6rem 7% 2rem;
+}
+
+.menu h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+}
+
+.menu h2 span,
+.contact h2 span {
+  color: var(--primary);
+}
+
+/* Menu section*/
+.menu h2,
+.contact h2 {
+  margin-bottom: 1rem;
+}
+.menu p,
+.contact p {
+  text-align: center;
+  max-width: 70%;
+  margin: auto;
+  font-weight: 110;
+  line-height: 1.5;
+}
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+.menu-card {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.menu .row .menu-card {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.menu .row .menu-card img {
+  padding: 25px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px; /* Lebar tetap untuk setiap card */
+}
+.menu .row .menu-card .menu-card-title {
+  margin-top: 1rem auto 0.5rem;
+}
+/* contact section */
+.contact .row {
+  display: flex;
+  margin-top: 0.5rem;
+  background-color: #222;
+}
+.contact .row .map {
+  flex: 1 1 25rem;
+  width: 100;
+  object-fit: cover;
+}
+.contact .row form {
+  flex: 1 1 30rem;
+  padding: 2rem 0.5rem;
+  text-align: center;
+}
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+.contact .row form .input-group input {
+  width: 70%;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  background: none;
+  color: #fff;
+}
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Footer Section */
+footer {
+  /* background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem; */
+
+  bottom: 0;
+  width: 100%;
+  padding: 0px 0.5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(0px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  text-align: center;
+  color: white;
+}
+footer:hover {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+}
+footer .socials {
+  padding: 1rem 0;
+}
+footer .socials a {
+  color: #fff;
+  margin: 0.5rem;
+}
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+}
+footer .links {
+  margin-bottom: 0.5rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+}
+footer .credit {
+  font-size: 1rem;
+}
+footer .credit a {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Footer Section End */
+
+/* Media Queris */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+.image-row {
+  padding: 7.5rem;
+}
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  .hero .btn-whatsapp,
+  .hero .btn-telegram,
+  .hero .btn-facebook {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  #seafood-menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.2);
+}
+.about .row {
+  flex-wrap: wrap;
+}
+.about .row .about-img img {
+  height: 24rem;
+  object-fit: cover;
+  object-position: center;
+}
+.about .row .content {
+  padding: 0;
+}
+.about .row .content h3 {
+  margin-top: 1 rem;
+  font-size: 1.6rem;
+}
+.about .row .content p {
+  font-size: 1.6rem;
+}
+.menu p {
+  font-size: 1.2rem;
+}
+.contact .row {
+  flex-wrap: wrap;
+}
+.contact .row map {
+  height: 30rem;
+}
+.contact .row form {
+  padding-top: 0;
+}
+
+/* Mobile phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+.hero .btn-whatsapp,
+.hero .btn-telegram,
+.hero .btn-facebook {
+  padding: 6px 14px;
+  font-size: 14px;
+}
+.hero .content h1 {
+  padding-top: 3rem;
+}
+.image-row {
+  padding-bottom: 4rem;
+  margin-top: -200px;
+}
