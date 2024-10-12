@@ -11,7 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Feather Icon -->
     <script src="c"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -39,22 +40,69 @@
     <!-- Navbar end -->
 
     <!-- Hero section start -->
+
     <section class="hero" id="home">
       <main class="content">
-        <div class="image-row">
-          <div class="image-slide">
-            <img src="img/dermagasiang.jpg" alt="Gambar 1" />
-            <img src="img/Picture1.jpg" alt="Gambar 2" />
-            <img src="img/bungasakura.jpeg" alt="Gambar 3" />
-            <img src="img/Picture3.jpg" alt="Gambar 4" />
-            <img src="img/mangrove.jpg" alt="Gambar 5" />
-            <img src="img/pantaitimur.jpeg" alt="Gambar 6" />
-            <img src="img/pantaisakura.jpeg" alt="Gambar 7" />
-            <img src="img/pantaibanana.jpg" alt="Gambar 8" />
-            <img src="img/tentang-kelapa.jpg" alt="Gambar 9" />
-            <img src="img/kapaldermaga2.jpg" alt="Gambar 10" />
-            <img src="img/pulaurambut.jpg" alt="Gambar 11" />
-            <img src="img/arahmangrove.jpg" alt="Gambar 12" />
+        <div class="flip-image-slider">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="img/bungasakura.jpeg" alt="Image 1" />
+              </div>
+              <div class="flip-card-back">
+                <img src="img/pantaiindah.jpg" alt="Image 2" />
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="img/pantaibiru1.jpg" alt="Image 3" />
+              </div>
+              <div class="flip-card-back">
+                <img src="img/pantaibiru2.jpg" alt="Image 4" />
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="img/pantaibiru1.jpg" alt="Image 5" />
+              </div>
+              <div class="flip-card-back">
+                <img src="img/pantaibiru2.jpg" alt="Image 6" />
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="img/pantaibiru1.jpg" alt="Image 7" />
+              </div>
+              <div class="flip-card-back">
+                <img src="img/pantaibiru2.jpg" alt="Image 8" />
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="img/pantaibiru1.jpg" alt="Image 9" />
+              </div>
+              <div class="flip-card-back">
+                <img src="img/pantaisakura.jpeg" alt="Image 10" />
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="img/dermagasiang.jpg" alt="Image 11" />
+              </div>
+              <div class="flip-card-back">
+                <img src="img/pantaitimur.jpeg" alt="Image 12" />
+              </div>
+            </div>
           </div>
         </div>
         <h1>
@@ -66,7 +114,7 @@
         </p>
         <p class="second-paragraph">Atur Jadwal Sekarang</p>
 
-        <!-- Telegram button -->
+        <!-- whatsapp button -->
         <div
           class="d-flex flex-column align-items-start mt-4"
           style="width: 100%"
@@ -93,6 +141,7 @@
             <i class="bi bi-facebook"></i> Chat via Facebook </a
           ><br />
         </div>
+
         <!-- Telegram button End -->
       </main>
     </section>
@@ -100,22 +149,22 @@
     <!-- Hero Selection End -->
 
     <!-- Tentang kami -->
-    <section id="tentang-kami">
+    <section class="about" id="tentang-kami">
       <div class="container">
         <!-- Bagian Gambar -->
-        <div class="gambar">
-          <img src="img/pulau-group.png" alt="Pulau Untung Jawa" />
-        </div>
-
-        <!-- Bagian Teks -->
         <div class="teks">
           <h2 class="hover-color">Tentang Pulau Untung Jawa</h2>
+          <div class="gambar" data-aos="zoom-in">
+            <img src="img/pulau-group.png" alt="Pulau Untung Jawa" />
+          </div>
+
+          <!-- Bagian Teks -->
+
           <p class="warna-1">
             Pulau Untung Jawa adalah salah satu destinasi wisata terbaik di
             Kepulauan Seribu yang menawarkan keindahan alam yang mempesona.
             Dengan pantai berpasir putih, air laut yang jernih, dan suasana yang
-            tenang, pulau ini menjadi tempat sempurna untuk berlibur dan
-            bersantai.
+            tenang.
           </p>
 
           <p class="warna-2">
@@ -126,10 +175,7 @@
             pasangan, maupun solo traveler yang ingin menjelajahi keindahan alam
             Indonesia.
           </p>
-          <p class="warna-3">
-            Mari jelajahi keindahan Pulau Untung Jawa dan ciptakan kenangan
-            indah bersama kami!
-          </p>
+
           <p class="warna-4">
             kami berupaya memberikan Anda panduan informatif, paket wisata
             menarik, tips dan trik agar perjalanan Anda menjadi pengalaman yang
@@ -141,9 +187,10 @@
 
     <!-- Paket liburan -->
     <!-- Section Paket Liburan -->
-    <section id="paket-liburan">
+    <section class="paket" id="paket-liburan">
       <h2>Paket Liburan ke Pulau Untung Jawa</h2>
-      <div class="paket-container">
+      <div class="paket-container" data-aos="fade-up" data-aos-duration="3000">
+        >
         <!-- Paket 1 -->
         <div class="paket-card">
           <h3>
@@ -155,10 +202,11 @@
           <p>
             <strong>Fasilitas:</strong> <br />
             - Kapal PP via Tanjung pasir<br />
+            - Tiket masuk<br />
+            - Homestay (Penginapan) <br />
+            - Makan 3 kali<br />
             - Snorkeling <br />
             - Banana boat<br />
-            - Homestay (Penginapan) <br />
-            - Makan siang seafood <br />
           </p>
           <a
             href="https://wa.me/628993389808?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Hemat%20Liburan%20ke%20Pulau%20Untung%20Jawa!"
@@ -178,10 +226,12 @@
           <p>
             <strong>Fasilitas:</strong><br />
             - kapal PP via Tanjung Pasir<br />
+            - Tiket masuk<br />
             - Villa Keluarga <br />
             - Makan 5 Kali<br />
             - Tour Pulau<br />
-            - Snorkeling dan Banana Boat <br />
+            - Snorkeling<br />
+            - Banana Boat <br />
           </p>
           <a
             href="https://wa.me/628993389808?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Keluarga%20Liburan%20ke%20Pulau%20Untung%20Jawa!"
@@ -201,6 +251,7 @@
           <p>
             <strong>Fasilitas:</strong> <br />
             - kapal PP via Tanjung Pasir<br />
+            - Tiket masuk<br />
             - Penginapan Eksklusif<br />
             - Makan 6 Kali<br />
             - Tour Lengkap Pulau<br />
@@ -223,6 +274,7 @@
           <p>
             <strong>Fasilitas:</strong><br />
             - kapal PP via Tanjung Pasir<br />
+            - Tiket masuk<br />
             - Penginapan Eksklusif<br />
             - Makan 6 Kali<br />
             - TourLengkap Pulau<br />
@@ -249,8 +301,9 @@
             hingga Rp 140.000/orang <br />
             untuk group yang lebih besar <br />
             (50 orang lebih)<br />
-            - Paket ini mencakup fasilitas seperti parkir<br />
+            - Parkir tanjung pasir<br />
             - kapal PP via Tanjung Pasir<br />
+            - Tiket masuk<br />
             - makan prasmanan/box<br />
             - banana boat<br />
             - snorkeling<br />
@@ -271,11 +324,11 @@
           <p><strong>Durasi:</strong> 2 Hari</p>
           <p>
             <strong>Fasilitas:</strong><br />
-            - Minimal 5 orang atau lebih<br />
+            - Minimal 4 orang atau lebih<br />
             - kapal PP via Tanjung Pasir<br />
-            - makan prasmanan/box 3x<br />
-            - Homestay/penginapan AC<br />
             - Tiket masuk<br />
+            - makan 3 kali<br />
+            - Homestay/penginapan AC<br />
           </p>
           <a
             href="https://wa.me/628993389808?text=Halo,%20saya%20tertarik%20dengan%20Paket%20Eksklusif%20Liburan%20ke%20Pulau%20Untung%20Jawa!"
@@ -338,19 +391,58 @@
           Anda.”
         </p>
       </div>
+
+      <!-- Cara bayar -->
+      <section
+        id="cara-pembayaran"
+        class="pembayaran-container"
+        data-aos="zoom-in-down"
+      >
+        <h2>Cara Pembayaran</h2>
+        <p>
+          Untuk memesan paket wisata, silakan lakukan pembayaran sebesar
+          <strong>30%</strong> sebagai tanda jadi. Sisa pembayaran dapat
+          dilakukan di lokasi.
+        </p>
+
+        <h3>Rekening Bank</h3>
+        <div class="rekening-container">
+          <div class="rekening-card">
+            <img src="img/bri.png" alt="Logo Bank BCA" class="logo-bank" />
+            <h4>Bank BRI</h4>
+            <p>No. Rekening: 038501064287509</p>
+            <p>Atas Nama: Lukman Hakim</p>
+          </div>
+
+          <div class="rekening-card">
+            <img
+              src="img/mandiri.png"
+              alt="Logo Bank Mandiri"
+              class="logo-bank"
+            />
+            <h4>Bank Mandiri</h4>
+            <p>No. Rekening: 1670005295646</p>
+            <p>Atas Nama: Lukman Hakim</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cara bayar End -->
     </section>
     <!-- paket liburan END -->
     <!-- Gallery kami -->
     <section id="galeri">
       <h3>Galeri Kami</h3>
-      <div class="galeri-grid">
+      <div class="galeri-grid" data-aos="zoom-in-down">
         <img src="img/untungjawatrip-logo.png" alt="Foto 1 Pulau Untung Jawa" />
         <img src="img/mangrove.jpg" alt="Foto 2 Pulau Untung Jawa" />
+        <img src="img/sakurapasir.jpg" alt="Foto 2 Pulau Untung Jawa" />
+        <img src="img/pantaibanana2.jpg" alt="Foto 2 Pulau Untung Jawa" />
         <img src="img/pantaibanana.jpg" alt="Foto 3 Pulau Untung Jawa" />
         <img src="img/pantaiindah.jpg" alt="Foto 4 Pulau Untung Jawa" />
         <img src="img/jembatanpengantin.jpg" alt="Foto 5 Pulau Untung Jawa" />
         <img src="img/pantaimangrove.jpg" alt="Foto 6 Pulau Untung Jawa" />
-        <img src="img/pantaisakura.jpeg" alt="Foto 7 Pulau Untung Jawa" />
+        <img src="img/pohonpengantin.jpeg" alt="Foto 7 Pulau Untung Jawa" />
         <img src="img/untungjawasakura.jpg" alt="Foto 8 Pulau Untung Jawa" />
         <img src="img/pasir-putih.jpg" alt="Foto 9 Pulau Untung Jawa" />
         <img
@@ -365,7 +457,13 @@
     <!-- gallery end -->
 
     <!-- Menu section STAR -->
-    <section id="menu" class="menu">
+    <section
+      id="menu"
+      class="menu"
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+    >
       <h2>
         <h2><span>Menu</span> Kami</h2>
         <p>
@@ -376,7 +474,7 @@
           <div class="menu-card">
             <img src="img/menu/udang1.jpg" alt="udang" class="menu-card-img" />
             <h3 class="menu-card-title">- Udang -</h3>
-            <p class="menu-card-price">IDR 80K</p>
+            <!-- <p class="menu-card-price">IDR 80K</p> -->
           </div>
           <div class="menu-card">
             <img
@@ -385,12 +483,12 @@
               class="menu-card-img"
             />
             <h3 class="menu-card-title">- Gurita -</h3>
-            <p class="menu-card-price">IDR 80K</p>
+            <!-- <p class="menu-card-price">IDR 80K</p> -->
           </div>
           <div class="menu-card">
             <img src="img/menu/kerang.jpg" alt="udang" class="menu-card-img" />
             <h3 class="menu-card-title">- Kerang -</h3>
-            <p class="menu-card-price">IDR 55K</p>
+            <!-- <p class="menu-card-price">IDR 55K</p> -->
           </div>
           <div class="menu-card">
             <img
@@ -399,7 +497,7 @@
               class="menu-card-img"
             />
             <h3 class="menu-card-title">- Tumis Kangkung -</h3>
-            <p class="menu-card-price">IDR 30K</p>
+            <!-- <p class="menu-card-price">IDR 30K</p> -->
           </div>
           <div class="menu-card">
             <img
@@ -408,7 +506,7 @@
               class="menu-card-img"
             />
             <h3 class="menu-card-title">- Ikan Bakar -</h3>
-            <p class="menu-card-price">IDR 95K</p>
+            <!-- <p class="menu-card-price">IDR 95K</p> -->
           </div>
           <div class="menu-card">
             <img
@@ -417,16 +515,31 @@
               class="menu-card-img"
             />
             <h3 class="menu-card-title">- Cumi-Cumi -</h3>
-            <p class="menu-card-price">IDR 85K</p>
+            <!-- <p class="menu-card-price">IDR 85K</p> -->
+          </div>
+          <div class="menu-card">
+            <img src="img/menu/lobster.jpg" alt="udang" class="menu-card-img" />
+            <h3 class="menu-card-title">- Lobster -</h3>
+            <!-- <p class="menu-card-price">IDR 85K</p> -->
+          </div>
+          <div class="menu-card">
+            <img src="img/menu/pindang.jpg" alt="udang" class="menu-card-img" />
+            <h3 class="menu-card-title">- Pindang -</h3>
+            <!-- <p class="menu-card-price">IDR 85K</p> -->
           </div>
           <div class="menu-card">
             <img
-              src="img/menu/cumicumi.jpeg"
+              src="img/menu/tahutempe.jpg"
               alt="udang"
               class="menu-card-img"
             />
-            <h3 class="menu-card-title">- Cumi-Cumi -</h3>
-            <p class="menu-card-price">IDR 85K</p>
+            <h3 class="menu-card-title">- Tahu-tempe -</h3>
+            <!-- <p class="menu-card-price">IDR 85K</p> -->
+          </div>
+          <div class="menu-card">
+            <img src="img/menu/sambal.jpg" alt="udang" class="menu-card-img" />
+            <h3 class="menu-card-title">- Sambal kecap -</h3>
+            <!-- <p class="menu-card-price">IDR 85K</p> -->
           </div>
         </div>
       </h2>
@@ -481,13 +594,13 @@
         <a href="#"><i data-feather="facebook"></i></a>
         <div class="links">
           <a href="#home">Home</a>
-          <a href="#about">Tentang Kami</a>
+          <a href="#tentang-kami">Tentang Kami</a>
           <a href="#menu">Menu kami</a>
           <a href="#contact">Kontak</a>
           <div class="credit">
             <p>
-              Created by <a href=""><strong>Lukman Hakim</strong></a
-              >. | &copy; 2024
+              Created by <a href=""><strong>Untungjawatrip.</strong></a
+              >| &copy; 2024 Pulau Untung Jawa. All rights reserved.
             </p>
           </div>
         </div>
@@ -504,5 +617,9 @@
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

@@ -87,6 +87,8 @@ body {
 .navbar .navbar-nav a:hover {
   color: #ffcc00;
   transform: scale(1.2);
+  background: linear-gradient(45deg, #6299eb, #de5d83, #96b6db);
+  border-radius: 5px;
 }
 .navbar .navbar-nav a::after {
   content: "";
@@ -118,42 +120,8 @@ body {
 }
 
 /* Hero Section */
+
 /* hero image slide */
-.image-row {
-  height: auto;
-  width: 100%;
-  overflow: 100%; /* Sembunyikan gambar yang di luar batas */
-  position: relative;
-  margin-top: -100px;
-}
-.hero img:hover {
-  transform: scale(1.2) rotate(0deg); /* Gambar diperbesar dan sedikit berputar */
-}
-.image-slide:hover {
-  animation-play-state: paused; /* Hentikan animasi ketika di-hover */
-}
-.image-slide {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  animation: slideRight 14s linear infinite; /* Animasi berjalan ke kanan */
-}
-
-.image-slide img {
-  width: 150px;
-  height: auto;
-  border-radius: 10px;
-}
-
-@keyframes slideRight {
-  0% {
-    transform: translateX(-100%); /* Mulai dari luar layar sebelah kiri */
-  }
-  100% {
-    transform: translateX(1%); /* Bergerak ke arah kanan hingga keluar layar */
-  }
-}
 
 /* hero image slide end*/
 
@@ -310,6 +278,56 @@ body {
 }
 
 /* Facebook button ENd */
+/* Css image hero */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip-image-slider {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-bottom: 6rem;
+  margin-top: -5rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 30%;
+  perspective: 1000px;
+  position: relative;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100px; /* Sesuaikan dengan tinggi gambar */
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Css image hero end */
 
 @media (max-width: 768px) {
   .col-4 {
@@ -322,7 +340,7 @@ body {
   padding: 70px;
   background-color: #e0f7fa;
   flex: 1 1 45%; /* Elemen akan menyesuaikan lebar */
-  margin: 10px;
+  margin: 0px;
 }
 
 .container {
@@ -353,8 +371,9 @@ body {
 
 .teks h2 {
   font-size: 32px;
-  color: #00796b;
+  color: #06685c;
   padding: 1rem;
+  text-align: center;
 }
 
 .teks p {
@@ -460,7 +479,6 @@ body {
   display: flex;
   contain: wrap;
   gap: 8px;
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -498,6 +516,7 @@ body {
   border-radius: 5px;
   display: inline-block;
   transition: background-color 0.3s ease;
+  font-size: 14px;
 }
 
 .order-btn:hover {
@@ -531,11 +550,95 @@ body {
   transition: background-color 1s ease;
   font-size: 2rem;
 }
-
 /* Paket liburan End */
+
+/* Style Cara bayar */
+/* Mengatur layout untuk section pembayaran */
+.pembayaran-container {
+  padding: 20px;
+  background-color: #3084e4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+}
+
+.pembayaran-container h2 {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.pembayaran-container p {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.rekening-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.rekening-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  flex: 1 1 calc(45% - 20px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.rekening-card:hover {
+  transform: scale(1.05);
+}
+
+.rekening-card h4 {
+  margin-top: 15px; /* Jarak antara logo dan judul bank */
+  margin-bottom: 10px;
+}
+
+.rekening-card p {
+  font-size: 1.5rem;
+  color: #0f0d0d;
+}
+
+/* Mengatur tampilan logo bank */
+.logo-bank {
+  width: 200px; /* Ukuran logo */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 576px) {
+  .rekening-card {
+    flex: 1 1 100%;
+  }
+
+  .cara-pembayaran .pembayaran-container h2 {
+    font-size: 1rem;
+  }
+
+  .pembayaran-container p {
+    font-size: 1.5rem;
+  }
+
+  .logo-bank {
+    width: 150px; /* Ukuran logo lebih kecil di layar kecil */
+  }
+}
+
+/* Style Cara bayarEnd */
+
 /* Css Galery kami */
 #galeri {
-  padding: 40px;
+  padding: 20px;
   background: linear-gradient(
     135deg,
     #ff6b6b,
@@ -559,8 +662,8 @@ body {
 
 .galeri-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 5px;
 }
 
 .galeri-grid img {
@@ -584,7 +687,8 @@ body {
 }
 
 .menu h2,
-.contact h2 {
+.contact h2,
+.paket-liburan h2 {
   text-align: center;
   font-size: 2.4rem;
   margin-bottom: 3rem;
@@ -731,20 +835,37 @@ footer .credit a {
   html {
     font-size: 75%;
   }
+  #tentang-kami {
+    font-size: 24px; /* Font lebih besar di layar besar */
+  }
 }
+
 .image-row {
   padding: 7.5rem;
+}
+#paket-liburan h2 {
+  font-size: 50px;
 }
 /* Tablet */
 @media (max-width: 768px) {
   html {
     font-size: 62.5%;
   }
+  .about .teks h2 {
+    font-size: 14px;
+  }
+  #paket-liburan h2 {
+    font-size: 30px;
+  }
+  .paket h2 {
+    font-size: px;
+  }
+
   .hero .btn-whatsapp,
   .hero .btn-telegram,
   .hero .btn-facebook {
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 16px;
   }
 
   #seafood-menu {
@@ -813,11 +934,12 @@ footer .credit a {
     font-size: 50%;
   }
 }
+
 .hero .btn-whatsapp,
 .hero .btn-telegram,
 .hero .btn-facebook {
-  padding: 6px 14px;
-  font-size: 14px;
+  padding: 4px 12px;
+  font-size: 12px;
 }
 .hero .content h1 {
   padding-top: 3rem;
@@ -825,4 +947,23 @@ footer .credit a {
 .image-row {
   padding-bottom: 4rem;
   margin-top: -200px;
+}
+#tentang-kami {
+  padding: 30px;
+}
+.about .teks h2 {
+  font-size: 20px;
+}
+.about .teks p {
+  font-size: 12px;
+}
+#paket-liburan h2 {
+  font-size: 18px;
+}
+
+.menu-card {
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* 2 kolom, jadi 5 baris untuk 10 card */
 }

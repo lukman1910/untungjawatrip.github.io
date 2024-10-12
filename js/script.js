@@ -12,27 +12,32 @@ document.addEventListener("click", function (e) {
     navbarNav.classList.remove("active");
   }
 });
-// Fungsi untuk membuka modal dan menampilkan gambar besar
-function openModal(imgElement) {
-  var modal = document.getElementById("myModal");
-  var modalImg = document.getElementById("imgModal");
-  var captionText = document.getElementById("caption");
 
-  modal.style.display = "block";
-  modalImg.src = imgElement.src; // Mengambil gambar dari thumbnail yang diklik
-  captionText.innerHTML = imgElement.alt; // Menampilkan deskripsi dari atribut alt
+// flip otomatis di hero img
+const flipCards = document.querySelectorAll(".flip-card-inner");
+let imagesFront = ["image1.jpg", "image3.jpg", "image5.jpg"];
+let imagesBack = ["image2.jpg", "image4.jpg", "image6.jpg"];
+
+function flipCard(card, delay) {
+  setTimeout(() => {
+    card.style.transform =
+      card.style.transform === "rotateY(180deg)"
+        ? "rotateY(0deg)"
+        : "rotateY(180deg)";
+
+    // Setelah flip, tukar gambar
+    setTimeout(() => {
+      const frontImage = card.querySelector(".flip-card-front img");
+      const backImage = card.querySelector(".flip-card-back img");
+      [frontImage.src, backImage.src] = [backImage.src, frontImage.src];
+    }, 1000); // Sesuaikan waktu animasi flip
+  }, delay);
 }
 
-// Fungsi untuk menutup modal
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
+function startFlipSequence() {
+  flipCards.forEach((card, index) => {
+    flipCard(card, index * 2000); // Tambahkan delay untuk flip bergantian
+  });
 }
 
-// Menutup modal jika pengguna mengklik di luar gambar
-var modal = document.getElementById("myModal");
-modal.addEventListener("click", function (event) {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
+setInterval(startFlipSequence, 4000); // Jalankan setiap 6 detik
