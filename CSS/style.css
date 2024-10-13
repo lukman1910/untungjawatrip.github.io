@@ -87,7 +87,7 @@ body {
 .navbar .navbar-nav a:hover {
   color: #ffcc00;
   transform: scale(1.2);
-  background: linear-gradient(45deg, #6299eb, #de5d83, #96b6db);
+  background: linear-gradient(45deg, #6299eb, #ceb4bb, #96b6db);
   border-radius: 5px;
 }
 .navbar .navbar-nav a::after {
@@ -103,13 +103,13 @@ body {
 }
 .navbar .navbar-extra a {
   display: inline-block;
-  background: linear-gradient(45deg, #6299eb, #de5d83, #96b6db);
+  background: linear-gradient(45deg, #6299eb, #b9abaf, #96b6db);
   color: #fff;
   padding: 0.5px 5px;
-  font-size: 8px;
+  font-size: 6px;
   font-weight: bold;
   border: none;
-  border-radius: 50px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.4s ease;
   position: relative;
@@ -131,7 +131,7 @@ body {
   align-items: center;
   background-image: url("../img/Pulau3.jpg");
   background-repeat: no-repeat;
-  background-size: 1350px 750px;
+  background-size: cover;
   background-position: center;
 }
 .hero::after {
