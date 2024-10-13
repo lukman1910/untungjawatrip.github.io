@@ -14,30 +14,26 @@ document.addEventListener("click", function (e) {
 });
 
 // flip otomatis di hero img
-const flipCards = document.querySelectorAll(".flip-card-inner");
-let imagesFront = ["image1.jpg", "image3.jpg", "image5.jpg"];
-let imagesBack = ["image2.jpg", "image4.jpg", "image6.jpg"];
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const totalSlides = slides.length;
 
-function flipCard(card, delay) {
-  setTimeout(() => {
-    card.style.transform =
-      card.style.transform === "rotateY(180deg)"
-        ? "rotateY(0deg)"
-        : "rotateY(180deg)";
-
-    // Setelah flip, tukar gambar
-    setTimeout(() => {
-      const frontImage = card.querySelector(".flip-card-front img");
-      const backImage = card.querySelector(".flip-card-back img");
-      [frontImage.src, backImage.src] = [backImage.src, frontImage.src];
-    }, 1000); // Sesuaikan waktu animasi flip
-  }, delay);
-}
-
-function startFlipSequence() {
-  flipCards.forEach((card, index) => {
-    flipCard(card, index * 2000); // Tambahkan delay untuk flip bergantian
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) {
+      slide.classList.add("active");
+    }
   });
 }
 
-setInterval(startFlipSequence, 4000); // Jalankan setiap 6 detik
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+}
+
+// Menjalankan slide secara otomatis setiap 3 detik
+setInterval(nextSlide, 3000);
+
+// Tampilkan slide pertama saat halaman dimuat
+showSlide(currentSlide);
