@@ -280,25 +280,7 @@ body {
 /* Facebook button ENd */
 /* Css image hero */
 /* Image Flip Styles */
-.slideshow-container {
-  position: relative;
-  max-width: 100%;
-  margin-bottom: -3rem;
-  overflow: hidden;
-  height: 240px;
-}
 
-.slide {
-  width: 100%;
-  height: 150px; /* Sesuaikan tinggi gambar slide */
-  object-fit: cover;
-  display: none; /* Semua gambar tersembunyi kecuali yang aktif */
-  border-radius: 10px;
-}
-
-.slide.active {
-  display: block;
-}
 /* Css image hero end */
 
 @media (max-width: 768px) {
